@@ -30,8 +30,9 @@
   <nav class="drawer-nav">
     <a href="index.html#publications"><span class="num">01</span>Publications</a>
     <a href="index.html#ongoing"><span class="num">02</span>Ongoing Research</a>
-    <a href="index.html#cv"><span class="num">03</span>Education &amp; Experience</a>
-    <a href="about.html"><span class="num">04</span>Contact</a>
+    <a href="index.html#projects"><span class="num">03</span>Past Projects</a>
+    <a href="index.html#cv"><span class="num">04</span>Education &amp; Experience</a>
+    <a href="about.html"><span class="num">05</span>Contact</a>
   </nav>
   <div class="drawer-footer">
     <div class="links">
@@ -53,7 +54,10 @@
         <p class="eyebrow will-float">M.S. student · UC San Diego</p>
         <h1 class="name will-float">Ambery (Yu-Jung)<br><em>Liang</em></h1>
         <p class="tagline will-float">
-          I research the robustness, red-teaming, safety alignment and long-term memory for muti-agent system. 
+          I study how LLM agents fail when they work together and when they remember: adversarial insiders in multi-agent debate, and retrieval over agent memory.
+        </p>
+        <p class="tagline will-float">
+          I am applying to PhD programs for Fall 2027.
         </p>
         <!-- <p class="interests will-float">Interests: adversarial robustness, multi-agent LLM systems, medical AI, agent memory</p> -->
         <p class="hero-links will-float">
@@ -158,6 +162,38 @@
       </div>
     </section>
 
+    <section id="projects">
+      <p class="eyebrow will-float">Research</p>
+      <h2 class="section-title will-float">Past Projects</h2>
+
+      <div class="accordion">
+        <div class="accordion-item will-float">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="pub-year">2025</span>
+            <span class="pub-title">Knowledge-Graph Multi-Agent Prototype for Cardiology Decision Support<span class="pub-venue">Far Eastern Memorial Hospital · Team prototype, not deployed</span></span>
+            <span class="plus">+</span>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-panel-inner">
+              A team project; two collaborators built the Vue front end and the rewritten FastAPI back end. I built the first prototype, a LangGraph pipeline with a local Gemma3 model and a Neo4j patient graph: a pretrained medical NER model and LLM relation extraction over admission notes feed the graph, treatment and medication recommendations are drafted from it, and physician feedback is turned into guideline nodes stored back in the graph. Separately, I fine-tuned Qwen3-0.6B with LoRA to extract vital signs (blood pressure, pulse, temperature, height, weight, BMI) from unstructured Chinese admission notes, and ran it over 200,000 records.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item will-float">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="pub-year">2026</span>
+            <span class="pub-title">T2DM Comorbidity Pathway Prediction: From LLM Frozen Embeddings to BEHRT-Based Transformers<span class="pub-venue">Course project, ECE 176, UC San Diego · MIMIC-IV v3.1</span></span>
+            <span class="plus">+</span>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-panel-inner">
+              For patients with type 2 diabetes, we predict which of 26 comorbidities a patient develops next, and whether each develops within windows from 3 months to 5 years. We compare logistic regression, random forest, XGBoost, a Markov chain, Qwen3 frozen embeddings, and EHR-specific transformers (BEHRT, CEHR-BEHRT, DT-BEHRT, EHR-Mamba). The best model, an MLM-pretrained BEHRT stacked with XGBoost on raw ICD codes, reaches MRR 0.660 against 0.421 for XGBoost, and top-1 accuracy 50.7% against 23.0%. Qwen3 frozen embeddings did not outperform XGBoost.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="cv">
       <p class="eyebrow will-float">CV</p>
       <h2 class="section-title will-float">Education &amp; Experience</h2>
@@ -171,7 +207,12 @@
         <div class="timeline-item will-float">
           <span class="year">2025 — 2026</span>
           <h3>AI Engineer · Far Eastern Memorial Hospital (remote)</h3>
-          <p>Advisor: Dr. Fang-Ming Hung. Built a knowledge-graph multi-agent clinical decision-support system for cardiology on de-identified health records, combining medical NER, a Neo4j patient graph, ICD-10 prediction, retrieval of analogous cases, and a loop that feeds physician corrections back into the graph.</p>
+          <p>Advisor: Dr. Fang-Ming Hung. Co-built a knowledge-graph multi-agent clinical decision-support prototype for cardiology. Built the first prototype (LangGraph, Neo4j, pretrained medical NER with LLM relation extraction, and physician feedback stored as guidelines in the graph), then trained a LoRA model that extracts vital signs from unstructured admission notes.</p>
+        </div>
+        <div class="timeline-item will-float">
+          <span class="year">2024 — 2025</span>
+          <h3>Data Analytics Intern · ASML Taiwan</h3>
+          <p>Built an automated appointment-management system with Power Automate and Power BI over 500+ weekly records, including rule-based no-show anomaly detection, which cut about 100 hours of manual work per week.</p>
         </div>
         <div class="timeline-item will-float">
           <span class="year">2023 — 2025</span>
