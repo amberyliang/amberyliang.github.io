@@ -366,6 +366,10 @@ section { padding: clamp(2.5rem, 6vw, 4rem) 0; }
   margin: 0;
 }
 
+.hero-text .tagline + .tagline { margin-top: 0.75rem; }
+
+.nowrap { white-space: nowrap; }
+
 /* ============================================================
    Page 1 — CV 時間軸
    ============================================================ */
@@ -823,10 +827,24 @@ section { padding: clamp(2.5rem, 6vw, 4rem) 0; }
   .menu-toggle { display: inline-flex; order: 2; }
   .brand { order: 1; }
 
-  .hero { grid-template-columns: 1fr; gap: 1.5rem; }
-  .hero-portrait { width: 132px; max-width: 132px; min-height: 0; aspect-ratio: 3 / 4; align-self: start; order: -1; }
+  .menu-toggle { width: auto; padding: 0 0.8rem; }
+
+  /* 照片與名字並排，其餘內容全寬：hero-text 攤平成 hero 的格子項目 */
+  .hero { grid-template-columns: 112px 1fr; column-gap: 1.25rem; row-gap: 0; align-items: end; }
+  .hero-text { display: contents; }
+  .hero-portrait { grid-column: 1; grid-row: 1 / span 2; width: 112px; max-width: 112px; min-height: 0; aspect-ratio: 3 / 4; align-self: center; }
+  .hero-portrait img { transform: scale(1.35); transform-origin: 46% 42%; }
   .hero-portrait .placeholder-label { font-size: 0.68rem; padding: 0.5rem; }
-  .hero-text { order: 0; }
+  .hero-text .eyebrow { grid-column: 2; margin-bottom: 0.5rem; }
+  .hero-text .name { grid-column: 2; font-size: 1.8rem; margin: 0; }
+  .hero-text > .tagline,
+  .hero-text > .interests,
+  .hero-text > .hero-links { grid-column: 1 / -1; }
+  .hero-text .name + .tagline { margin-top: 1.5rem; }
+
+  /* 年份移到標題上方，讓標題用滿整行 */
+  .accordion-trigger { flex-wrap: wrap; row-gap: 0.3rem; }
+  .accordion-trigger .pub-year { flex-basis: 100%; min-width: 0; }
 
   /* 觸控裝置沒有 hover：日誌卡片改為地圖下方的常駐清單 */
   .dive-log-card {
