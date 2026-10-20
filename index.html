@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ambery (Yu-Jung) Liang — Research</title>
+<meta name="description" content="M.S. student at UC San Diego working on the robustness of LLM multi-agent systems and on memory retrieval for LLM agents.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<!-- ===== 頂部導航（極簡置中流） ===== -->
+<header class="site-header">
+  <button class="menu-toggle" aria-label="Open menu">MENU&nbsp;+</button>
+  <a class="brand" href="index.html">Ambery <em>Liang</em></a>
+  <nav class="main-nav">
+    <a href="index.html#publications" class="is-active">Research</a>
+    <a href="index.html#cv">CV</a>
+    <a href="about.html">Contact</a>
+  </nav>
+</header>
+
+<div class="drawer-mask" aria-hidden="true"></div>
+<aside class="drawer" aria-label="Mobile menu">
+  <button class="drawer-close" aria-label="Close menu">CLOSE&nbsp;×</button>
+  <nav class="drawer-nav">
+    <a href="index.html#publications"><span class="num">01</span>Publications</a>
+    <a href="index.html#ongoing"><span class="num">02</span>Ongoing Research</a>
+    <a href="index.html#cv"><span class="num">03</span>Education &amp; Experience</a>
+    <a href="about.html"><span class="num">04</span>Contact</a>
+  </nav>
+  <div class="drawer-footer">
+    <div class="links">
+      <a href="https://scholar.google.com/citations?user=uC3WDv4AAAAJ&hl=en" target="_blank" rel="noopener">Google&nbsp;Scholar</a>
+      <a href="https://orcid.org/0009-0003-1619-6116" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://www.linkedin.com/in/ambery-liang-749368227" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/amberyliang" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://medium.com/@angelliang112" target="_blank" rel="noopener">Medium</a>
+    </div>
+    <button class="copy-email" data-email="amliang@ucsd.edu">COPY&nbsp;EMAIL</button>
+  </div>
+</aside>
+
+<main>
+  <div class="container">
+
+    <section class="hero hero--solo">
+      <div class="hero-text">
+        <p class="eyebrow will-float">M.S. student · UC San Diego</p>
+        <h1 class="name will-float">Ambery (Yu-Jung)<br><em>Liang</em></h1>
+        <p class="tagline will-float">
+          I study the robustness of LLM multi-agent systems, especially in medical question answering, and memory retrieval for LLM agents.
+        </p>
+        <p class="interests will-float">Interests: adversarial robustness, multi-agent LLM systems, medical AI, agent memory</p>
+        <p class="hero-links will-float">
+          <a href="cv.pdf" download>CV (PDF)</a>
+          <a href="https://scholar.google.com/citations?user=uC3WDv4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://orcid.org/0009-0003-1619-6116" target="_blank" rel="noopener">ORCID</a>
+          <a href="https://github.com/amberyliang" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/ambery-liang-749368227" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:amliang@ucsd.edu">amliang@ucsd.edu</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="publications">
+      <p class="eyebrow will-float">Research</p>
+      <h2 class="section-title will-float">Publications</h2>
+      <p class="lede will-float">Select a title to read the summary.</p>
+
+      <div class="accordion">
+        <div class="accordion-item will-float">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="pub-year">2026</span>
+            <span class="pub-title">To Diffuse or Not to Diffuse: Matching Graph Retrieval to Memory Structure in LLM Agents<span class="pub-venue">Lifelong Agent Workshop @ COLM 2026 · Accepted. Extended version under review at ICLR 2027</span></span>
+            <span class="plus">+</span>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-panel-inner">
+              We build a 5W (who, what, when, where, why) extraction pipeline that feeds a graph-traversal retriever, and hold the extracted notes fixed across retrievers to separate retrieval algorithm from extraction quality. On LongMemEval and ATANT, dense retrieval reaches recall@5 of 82.5 against 41.8 to 53.7 for graph traversal, and a paired bootstrap shows the gap comes from the algorithm. The results show when graph-structured memory repays its extraction cost and when it only adds overhead over flat dense retrieval.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item will-float">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="pub-year">2026</span>
+            <span class="pub-title">Teammate Awareness Makes a Coordination Signal Visible: A First Step Toward Detecting Collusion in Multi-Agent LLM Debate<span class="pub-venue">WiML @ NeurIPS 2026</span></span>
+            <span class="plus">+</span>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-panel-inner">
+              In medical multi-agent LLM debate, insiders that know who their teammates are produce a coordination signal that insiders unaware of their teammates do not. We treat this signal as a first step toward detecting collusion during the debate itself.
+              <span class="pub-links"><a href="https://openreview.net/forum?id=yllxs56AGJ" target="_blank" rel="noopener">OpenReview</a></span>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item will-float">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="pub-year">2027</span>
+            <span class="pub-title">TagGraph: Tag-Augmented Graphs for Graph Retrieval of Agent Persistent Histories<span class="pub-venue">NAACL 2027 · Under review</span></span>
+            <span class="plus">+</span>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-panel-inner">
+              TagGraph redesigns ingestion so that memory-worthy content maps into a shared hierarchical 5W+Extra ontology of tag-linked notes. Retrieval separates graph-traversal candidate generation from lexical, tag, and graph-aware ranking.
+              <span class="pub-links"><a href="https://arxiv.org/abs/2609.38353" target="_blank" rel="noopener">arXiv</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ongoing">
+      <p class="eyebrow will-float">Research</p>
+      <h2 class="section-title will-float">Ongoing Research</h2>
+
+      <div class="accordion">
+        <div class="accordion-item will-float">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="pub-year">2026</span>
+            <span class="pub-title">Debate-Time Defense Against Insider Collusion in Medical Multi-Agent Systems<span class="pub-venue">In preparation · with Prof. Carlee Joe-Wong (CMU ECE)</span></span>
+            <span class="plus">+</span>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-panel-inner">
+              Medical question-answering systems increasingly let several LLM agents debate before they answer. We study what happens when some agents on the panel are insiders who cover for each other, and whether a defense that acts during the debate, rather than after it, can expose them.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item will-float">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="pub-year">2026</span>
+            <span class="pub-title">Prompt Injection in Debate-Based Multi-Agent Question Answering<span class="pub-venue">Course project, CSE 227 (Graduate Computer Security), UC San Diego</span></span>
+            <span class="plus">+</span>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-panel-inner">
+              We measure message-tampering attacks on three debate architectures (majority-vote debate, MAD, and ReConcile), injected at three stages of the debate with seven black-box payloads, one of them optimized by an attacker LLM. The models are Qwen3-8B, Llama-3.1-8B, and GPT-4o-mini, evaluated on MMLU, GSM8K, and StrategyQA.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv">
+      <p class="eyebrow will-float">CV</p>
+      <h2 class="section-title will-float">Education &amp; Experience</h2>
+
+      <div class="timeline">
+        <div class="timeline-item will-float">
+          <span class="year">2025 — 2027</span>
+          <h3>M.S. in Electrical &amp; Computer Engineering · UC San Diego</h3>
+          <p>Specialization in Machine Learning and Data Science.</p>
+        </div>
+        <div class="timeline-item will-float">
+          <span class="year">2025 — 2026</span>
+          <h3>AI Engineer · Far Eastern Memorial Hospital (remote)</h3>
+          <p>Advisor: Dr. Fang-Ming Hung. Built a knowledge-graph multi-agent clinical decision-support system for cardiology on de-identified health records, combining medical NER, a Neo4j patient graph, ICD-10 prediction, retrieval of analogous cases, and a loop that feeds physician corrections back into the graph.</p>
+        </div>
+        <div class="timeline-item will-float">
+          <span class="year">2023 — 2025</span>
+          <h3>Undergraduate Researcher · National Chung Hsing University</h3>
+          <p>Advisor: Prof. Meng-Hsiun Tsai. Built a U-Net and YOLOv8 pipeline for breast-ultrasound lesion segmentation and detection, reaching 95% precision and 92% recall on more than 3,000 labeled scans.</p>
+        </div>
+        <div class="timeline-item will-float">
+          <span class="year">2021 — 2025</span>
+          <h3>B.B.A. in Information Management · National Chung Hsing University</h3>
+          <p>Taichung, Taiwan.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    © 2026 Ambery (Yu-Jung) Liang
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
