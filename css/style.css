@@ -29,6 +29,7 @@
   --pad:     clamp(1.25rem, 5vw, 2.5rem);
   --radius:  4px;
   --header-h: 64px;
+  --main-pt: clamp(2.5rem, 7vw, 5rem);   /* main 上方留白 */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -233,7 +234,7 @@ body.drawer-open .drawer-mask { opacity: 1; pointer-events: auto; }
    共用元件
    ============================================================ */
 
-main { padding: clamp(2.5rem, 7vw, 5rem) 0 4rem; }
+main { padding: var(--main-pt) 0 4rem; }
 
 .container {
   width: 100%;
@@ -829,18 +830,59 @@ section { padding: clamp(2.5rem, 6vw, 4rem) 0; }
 
   .menu-toggle { width: auto; padding: 0 0.8rem; }
 
-  /* 照片與名字並排，其餘內容全寬：hero-text 攤平成 hero 的格子項目 */
-  .hero { grid-template-columns: 112px 1fr; column-gap: 1.25rem; row-gap: 0; align-items: end; }
+  /* 第一屏：滿版照片 + 下方名字，往下滑翻頁到自我介紹。
+     hero-text 攤平成 hero 的格子項目，照片與名字佔第一屏，其餘接在後面 */
+  html { scroll-snap-type: y proximity; scroll-padding-top: var(--header-h); }
+
+  .hero {
+    --name-h: 6.5rem;
+    grid-template-columns: 1fr;
+    gap: 0;
+    align-items: start;
+    margin: calc(-1 * var(--main-pt)) calc(-1 * var(--pad)) 0;
+    padding: 0 0 clamp(2.5rem, 6vw, 4rem);
+    scroll-snap-align: start;
+  }
   .hero-text { display: contents; }
-  .hero-portrait { grid-column: 1; grid-row: 1 / span 2; width: 112px; max-width: 112px; min-height: 0; aspect-ratio: 3 / 4; align-self: center; }
-  .hero-portrait img { transform: scale(1.35); transform-origin: 46% 42%; }
-  .hero-portrait .placeholder-label { font-size: 0.68rem; padding: 0.5rem; }
-  .hero-text .eyebrow { grid-column: 2; margin-bottom: 0.5rem; }
-  .hero-text .name { grid-column: 2; font-size: 1.8rem; margin: 0; }
+
+  .hero-portrait {
+    grid-column: 1; grid-row: 1;
+    width: 100%; max-width: none;
+    height: calc(100vh - var(--header-h) - var(--name-h));
+    height: calc(100svh - var(--header-h) - var(--name-h));
+    min-height: 0;
+    align-self: stretch;
+    border: 0;
+    border-radius: 0;
+  }
+  .hero-portrait img { object-position: center 30%; }
+  .hero-portrait .placeholder-label { font-size: 0.78rem; }
+
+  .hero-text .name {
+    grid-column: 1; grid-row: 2;
+    min-height: var(--name-h);
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 0;
+    padding: 1.25rem var(--pad) 0;
+  }
+  .hero-text .name br { display: none; }
+  .hero-text .name em { display: block; }
+
+  /* 第二屏起：自我介紹，左右內縮回原本的邊距 */
+  .hero-text .eyebrow {
+    grid-column: 1; grid-row: 3;
+    margin: 2.5rem var(--pad) 1rem;
+    scroll-snap-align: start;
+    scroll-margin-top: 1.5rem;
+  }
   .hero-text > .tagline,
   .hero-text > .interests,
-  .hero-text > .hero-links { grid-column: 1 / -1; }
-  .hero-text .name + .tagline { margin-top: 1.5rem; }
+  .hero-text > .hero-links { grid-column: 1; }
+  .hero-text > .tagline { margin-left: var(--pad); margin-right: var(--pad); }
+  .hero-text > .interests,
+  .hero-text > .hero-links { padding-left: var(--pad); padding-right: var(--pad); }
+  .hero-text .tagline + .tagline { margin-top: 0.75rem; }
 
   /* 年份移到標題上方，讓標題用滿整行 */
   .accordion-trigger { flex-wrap: wrap; row-gap: 0.3rem; }
